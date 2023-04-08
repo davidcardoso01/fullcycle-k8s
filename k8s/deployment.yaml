@@ -19,10 +19,10 @@ spec:
           image: "davidcardoso01/goserver"
           resources:
             requests:
-              cpu: 100m
+              cpu: 20m
               memory: 20Mi
             limits:
-              cpu: 500m
+              cpu: 30m
               memory: 25Mi
           startupProbe:
             httpGet:
