@@ -25,3 +25,6 @@ Configurar o kubectl para usar o cluster novo:
 Aplicar todos os arquivos yaml da pasta k8s:
 
 `kubectl apply -f k8s/<<FILE>>`
+
+Como realizar um teste de stress simples:
+`kubectl run -it fortio --rm --image=fortio/fortio -- load -qps 800 -t 120s -c 70 "http://goserver/healthz"`
