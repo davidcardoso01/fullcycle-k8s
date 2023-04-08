@@ -17,7 +17,13 @@ spec:
       containers:
         - name: goserver
           image: "davidcardoso01/goserver"
-          
+          resources:
+            requests:
+              cpu: 100m
+              memory: 20Mi
+            limits:
+              cpu: 500m
+              memory: 25Mi
           startupProbe:
             httpGet:
               path: /healthz
