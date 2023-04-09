@@ -63,6 +63,8 @@ spec:
           volumeMounts:
             - mountPath: "/go/myfamily"
               name: config
+            - mountPath: "/go/pvc"
+              name: goserver-volume
       volumes:
         - name: config
           configMap:
@@ -70,3 +72,6 @@ spec:
             items:
               - key: members
                 path: "family.txt"
+        - name: goserver-volume
+          persistentVolumeClaim:
+            claimName: goserver-pvc
